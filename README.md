@@ -6,6 +6,31 @@ Open `personnummer_check_digit.xlsx`, paste numbers in column **A**, and the she
 
 Kaavat suomenkielisille Excel-funktioille. Erotin on `;`.
 
+## Helpot funktiot (VBA) – easy functions
+
+Tiedosto `Henkilotunnus.bas` lisää Exceliin omat funktiot:
+
+| Funktio | Esimerkki | Tulos |
+|---|---|---|
+| `=HETU_TARKISTE(A2)` | `131052-308` | `T` |
+| `=HETU_OIKEIN(A2)` | `131052-308T` | `TOSI` |
+| `=HETU_TAYSI(A2)` | `131052-308` | `131052-308T` |
+| `=HETU_SUKUPUOLI(A2)` | `131052-308T` | `Nainen` |
+| `=PNR_TARKISTE(A2)` | `811218-987` | `6` |
+| `=PNR_OIKEIN(A2)` | `19811218-9876` | `TOSI` |
+| `=PNR_TAYSI(A2)` | `811218987` | `811218-9876` |
+
+**Asennus:**
+1. Paina Excelissä `Alt + F11` (avaa VBA-editorin).
+2. Valitse **File → Import File…** (Tiedosto → Tuo tiedosto) ja valitse `Henkilotunnus.bas`.
+   *Tai:* **Insert → Module** ja liitä tiedoston sisältö **ilman ensimmäistä riviä** (`Attribute VB_Name = ...`).
+3. Sulje editori. Kirjoita soluun esim. `=HETU_TARKISTE(A2)`.
+4. Tallenna työkirja muodossa **Excel-työkirja, jossa on makroja (*.xlsm)**.
+
+Funktioiden nimet ovat samat suomen- ja englanninkielisessä Excelissä.
+
+## Kaavat ilman makroja
+
 ### Henkilötunnuksen tarkistusmerkki
 
 `A2` = `131052-308` tai `131052-308T`:
